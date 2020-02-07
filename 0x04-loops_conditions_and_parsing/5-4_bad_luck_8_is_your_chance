@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+index=1
+while ((index < 10));
+do
+    if ((index==3));
+    then
+	echo "bad luck"
+    elif ((index==7));
+    then
+	echo "good luck"
+    else
+	echo "Holberton School"
+    fi
+    ((index++))
+done
