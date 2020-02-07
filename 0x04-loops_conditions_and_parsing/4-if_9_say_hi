@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+index=0
+while ((index < 10));
+do
+    if ((index==9));
+    then
+	echo "Hi"
+    fi
+    echo "Holberton School"
+    ((index++))
+done
