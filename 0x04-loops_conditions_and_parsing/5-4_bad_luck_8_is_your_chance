@@ -3,12 +3,12 @@
 
 index=1
 
-while ((index < 10));
+while ((index <= 10));
 do
-    if ((index==3));
+    if ((index==4));
     then
 	echo "bad luck"
-    elif ((index==7));
+    elif ((index==8));
     then
 	echo "good luck"
     else
