@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+index=10
+until [ $index -lt 1 ];
+do
+    echo "Holberton School"
+    let index-=1
+done
