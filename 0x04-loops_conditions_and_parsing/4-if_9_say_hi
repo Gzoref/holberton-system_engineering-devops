@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
+#Displays Holberton School 10 times, but for the 9th iteration, displays Holberton School and then Hi on a new line.
+
 index=0
+
 while ((index < 10));
 do
     if ((index==9));
