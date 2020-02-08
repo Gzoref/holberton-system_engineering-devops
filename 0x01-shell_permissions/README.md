@@ -1,9 +1,14 @@
-Learning Objectives
+# 0x00. Shell, basics
 
-- What do the commands chmod, sudo, su, chown, chgrp do
-- Linux file permissions
-- How to represent each of the three sets of permissions (owner, group, and other) as a single digit
-- How to change permissions, owner and group of a file
-- Why can’t a normal user chown a file
-- How to run a command with root privileges
-- How to change user ID or become superuser
+## Description
+What you should learn from this project:
+
+* What does RTFM mean?
+* What is a Shebang
+
+---
+
+### [0. Where am I?](./0-current_working_directory)
+* Write a script that prints the absolute path name of the current working directory.
+
+
