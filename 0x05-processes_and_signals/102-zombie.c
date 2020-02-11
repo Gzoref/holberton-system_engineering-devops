@@ -30,7 +30,7 @@ int main(void)
 	pid_t zombie;
 	int index;
 
-	for (index = 0; index <= 5; index++)
+	for (index = 0; index < 5; index++)
 	{
 		zombie = fork();
 		if (zombie > 0)
@@ -44,7 +44,6 @@ int main(void)
 	}
 
 	infinite_while();
-
 
 	return (0);
 }
