@@ -7,15 +7,15 @@ path=/var/run/my_process.pid
 
 if [ "$1" = "start" ];then
     ./manage_my_process &
-    echo $$ > path
+    echo $$ > $path
     echo "manage_my_process"
 elif [ "$1" = "stop" ];then
     pkill -f ./manage_my_process
-    rm '$path'
+    rm $path
     echo 'manage_my_process stopped'
 elif [ "$1" = "restart" ];then
      pkill -f ./manage_my_process
-     rm '$path'
+     rm $path
      ./manage_my_process &
      echo $$ > $path
      echo "manage_my_process restarted"
