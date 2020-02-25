@@ -1,5 +1,7 @@
 # holberton-system_engineering-devops
 
+## Table of Contents :open_file_folder:
+
 ### [0x00_shell_basics](./0x00-shell_basics)
 
 ### [0x01-shell_permissions](https://github.com/Gzoref/holberton-system_engineering-devops/tree/master/0x01-shell_permissions)
