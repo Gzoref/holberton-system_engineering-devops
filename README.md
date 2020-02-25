@@ -10,5 +10,16 @@
 
 ### [0x04-loops_conditions_and_parsing](https://github.com/Gzoref/holberton-system_engineering-devops/tree/master/0x04-loops_conditions_and_parsing)
 
+### [0x05-processes_and_signals](https://github.com/Gzoref/holberton-system_engineering-devops/tree/master/0x05-processes_and_signals)
+
+### [0x06-regular_expressions](https://github.com/Gzoref/holberton-system_engineering-devops/tree/master/0x06-regular_expressions)
+
+### [0x07-networking_basics](https://github.com/Gzoref/holberton-system_engineering-devops/tree/master/0x07-networking_basics)
+
+### [0x08-networking_basics_2](https://github.com/Gzoref/holberton-system_engineering-devops/tree/master/0x08-networking_basics_2)
+
+
+
+
 ## Author
 * **Geoffrey Zoref** - [Gzoref](https://github.com/Gzoref)
