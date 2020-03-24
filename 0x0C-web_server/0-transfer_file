@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Transfer a file from client to server
+scp -i ~/.ssh/holberton some_page.html ubuntu@35.227.27.195:~/
