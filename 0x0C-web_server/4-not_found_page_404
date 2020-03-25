@@ -4,6 +4,7 @@
 apt-get -y update
 apt-get -y install nginx
 echo "Ceci n'est pas une page" | sudo /var/www/html/404.html
-newlines="\\\terror_page 404 /404.html;\n\tlocation = /404.html {\n\t\troot /var/www/html;\n\t\tinternal;\n\t}"
+sed -i "/server_name server2;/ a\\\trewrite ^/redirect_me// https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default
+sed -i "/redirect_me/ a\\\terror_page 404 /custom_404.html;" /etc/nginx/sites-available/default
 sudo sed -i "27i $newlines" /etc/nginx/sites-available/default
 service nginx start
