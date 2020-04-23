@@ -52,5 +52,5 @@ server letsencrypt 127.0.0.1:443
 
 backend http_back
 balance roundrobin
-server 1034-web-00 35.227.27.195:80 check
-server 1034-web-02 18.215.153.232:80 check
+server 1034-web-01 35.227.27.195:80 check
+server 1034-web-02 34.74.118.58:80 check
