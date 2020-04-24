@@ -1,4 +1,4 @@
-#
+q#
 # The MySQL database server configuration file.
 #
 # You can copy this to one of:
@@ -81,7 +81,7 @@ log_error = /var/log/mysql/error.log
 # note: if you are setting up a replication slave, see README.Debian about
 #       other settings you may need to change.
 #server-id              = 1
-#log_bin                        = /var/log/mysql/mysql-bin.log
+log_bin                        = /var/log/mysql/mysql-bin.log
 expire_logs_days        = 10
 max_binlog_size   = 100M
 binlog_do_db            = tyrell_corp
