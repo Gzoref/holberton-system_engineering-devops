@@ -1,4 +1,4 @@
-q#
+#
 # The MySQL database server configuration file.
 #
 # You can copy this to one of:
@@ -38,9 +38,14 @@ tmpdir          = /tmp
 lc-messages-dir = /usr/share/mysql
 skip-external-locking
 #
-# Instead of skip-networking the default is now to listen only on
+# For generating SSL certificates I recommend the OpenSSL GUI "tinyca".
+#
+# ssl-ca=/etc/mysql/cacert.pem
+# ssl-cert=/etc/mysql/server-cert.pem
+# ssl-key=/etc/mysql/server-key.pem
+~
 # localhost which is more compatible and is not less secure.
-#bind-addressbind               = 127.0.0.1
+#bind-address           = 127.0.0.1
 #
 # * Fine Tuning
 #
@@ -61,11 +66,6 @@ query_cache_limit       = 1M
 query_cache_size        = 16M
 #
 # * Logging and Replication
-#
-# Both location gets rotated by the cronjob.
-# Be aware that this log type is a performance killer.
-# As of 5.1 you can enable the log at runtime!
-#general_log_file        = /var/log/mysql/mysql.log
 #general_log             = 1
 #
 # Error log - should be very few entries.
@@ -80,8 +80,8 @@ log_error = /var/log/mysql/error.log
 # The following can be used as easy to replay backup logs or for replication.
 # note: if you are setting up a replication slave, see README.Debian about
 #       other settings you may need to change.
-#server-id              = 1
-log_bin                        = /var/log/mysql/mysql-bin.log
+server-id               = 1
+log_bin                 = /var/log/mysql/mysql-bin.log
 expire_logs_days        = 10
 max_binlog_size   = 100M
 binlog_do_db            = tyrell_corp
