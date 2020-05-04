@@ -9,11 +9,12 @@ if __name__ == '__main__':
 
     NUMBER_OF_DONE_TASKS = 0
     TASK_TITLE = []
+    USER_ID = sys.argv[1]
     req = requests.get('https://jsonplaceholder.typicode.com/users/{}'.
-                       format(sys.argv[1])).json()
-    EMPLOYEE_NAME = req.get("name")
+                       format(USER_ID)).json()
+    USERNAME = req.get("username")
     req = requests.get('https://jsonplaceholder.typicode.com/todos?userId={}'.
-                       format(sys.argv[1])).json()
+                       format(USER_ID)).json()
     for item in req:
         if item.get('completed') is True:
             TASK_TITLE.append(item.get('title'))
