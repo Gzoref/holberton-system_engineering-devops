@@ -30,6 +30,7 @@ if __name__ == '__main__':
         json_dictionary['completed'] = item.get('completed')
         json_dictionary['username'] = username
         json_list.append(json_dictionary)
+        json_dictionary = {}
 
     json_return = {}
     json_return[USER_ID] = json_list
