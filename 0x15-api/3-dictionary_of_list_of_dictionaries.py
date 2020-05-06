@@ -9,27 +9,32 @@ if __name__ == '__main__':
     import requests
 
     user = requests.get('https://jsonplaceholder.typicode.com/users')
-    name = user.json()
-    json_data = {}
+    name = len(user.json())
 
-    for user in name:
-        username = user.get('username')
-        user_id = str(user.get('id'))
-        url = 'https://jsonplaceholder.typicode.com/todos?userId=' + user_id
-        task = requests.get(url)
-        task_data = task.json()
+    json_return = {}
 
-    json_dictionary = {}
-    json_list = []
+    for USER_ID in range(1, name):
 
-    for item in task_data:
-        json_dictionary['task'] = item.get('title')
-        json_dictionary['completed'] = item.get('completed')
-        json_dictionary['username'] = username
-        json_list.append(json_dictionary)
+        user = requests.get('https://jsonplaceholder.typicode.com/users/{}'.
+                            format(USER_ID))
+        name = user.json()
+        username = name.get('username')
+
+        r = requests.get('https://jsonplaceholder.typicode.com/users/{}/todos'.
+                         format(USER_ID))
+
+        todos = r.json()
+
+        json_list = []
         json_dictionary = {}
 
-    json_data[user_id] = json_list
+        for item in todos:
+            json_dictionary['task'] = item.get('title')
+            json_dictionary['completed'] = item.get('completed')
+            json_dictionary['username'] = username
+            json_list.append(json_dictionary)
+
+        json_return[USER_ID] = json_list
 
     with open('todo_all_employees.json', 'w') as json_file:
-        json.dump(json_data, json_file)
+        json.dump(json_return, json_file)
