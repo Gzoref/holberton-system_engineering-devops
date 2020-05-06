@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
     json_return = {}
 
-    for USER_ID in range(1, name):
+    for USER_ID in range(1, name + 1):
 
         user = requests.get('https://jsonplaceholder.typicode.com/users/{}'.
                             format(USER_ID))
