@@ -8,33 +8,24 @@ if __name__ == '__main__':
     import json
     import requests
 
-    user = requests.get('https://jsonplaceholder.typicode.com/users')
-    name = len(user.json())
-
+    users = requests.get('https://jsonplaceholder.typicode.com/users').json()
     json_return = {}
+    username_dict = {}
 
-    for USER_ID in range(1, name + 1):
+    for user in users:
+        uid = user.get('id')
+        json_return[uid] = []
+        username_dict[uid] = user.get('username')
 
-        user = requests.get('https://jsonplaceholder.typicode.com/users/{}'.
-                            format(USER_ID))
-        name = user.json()
-        username = name.get('username')
+    todos = requests.get('https://jsonplaceholder.typicode.com/todos').json()
 
-        r = requests.get('https://jsonplaceholder.typicode.com/users/{}/todos'.
-                         format(USER_ID))
-
-        todos = r.json()
-
-        json_list = []
+    for item in todos:
         json_dictionary = {}
-
-        for item in todos:
-            json_dictionary['username'] = username
-            json_dictionary['task'] = item.get('title')
-            json_dictionary['completed'] = item.get('completed')
-            json_list.append(json_dictionary)
-
-        json_return[USER_ID] = json_list
+        uid = item.get('userId')
+        json_dictionary['task'] = item.get('title')
+        json_dictionary['username'] = username_dict.get('uid')
+        json_dictionary['completed'] = item.get('completed')
+        json_return.get(uid).append(json_dictionary)
 
     with open('todo_all_employees.json', 'w') as json_file:
         json.dump(json_return, json_file)
