@@ -23,7 +23,7 @@ if __name__ == '__main__':
         json_dictionary = {}
         uid = item.get('userId')
         json_dictionary['task'] = item.get('title')
-        json_dictionary['username'] = username_dict.get('uid')
+        json_dictionary['username'] = username_dict.get(uid)
         json_dictionary['completed'] = item.get('completed')
         json_return.get(uid).append(json_dictionary)
 
