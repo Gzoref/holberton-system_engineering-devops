@@ -10,7 +10,7 @@ def top_ten(subreddit):
     '''
     Top 10 posts  in subreddit
     '''
-    url = 'https://www.reddit.com/r/{}/hot.json?limit=10'.format(subreddit)
+    url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     user_agent = 'reddit_user'
 
     headers = {'User-Agent': user_agent}
@@ -23,5 +23,5 @@ def top_ten(subreddit):
         data = req.json()['data']
         post_list = data['children']
 
-        for posts in post_list:
+        for posts in post_list[0:10]:
             print(posts['data']['title'])
