@@ -26,7 +26,7 @@ def recurse(subreddit, hot_list=[], after=None, count=0):
         return None
 
     data = req.json()['data']
-    
+
     posts = data['children']
     for post in posts:
         count += 1
