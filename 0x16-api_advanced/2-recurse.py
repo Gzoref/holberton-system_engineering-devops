@@ -21,11 +21,12 @@ def recurse(subreddit, hot_list=[], after=None, count=0):
         url += '?after={}'.format(after)
     headers = {'User-Agent': user_agent}
     req = requests.get(url, headers=headers, allow_redirects=False)
-    data = req.json()['data']
 
     if req.status_code != 200:
         return None
 
+    data = req.json()['data']
+    
     posts = data['children']
     for post in posts:
         count += 1
