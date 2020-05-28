@@ -1,5 +1,5 @@
 #Change ULIMIT value from 15 to 2000
 exec {'/etc/default/nginx':
-command  => "sudo sed -i 's/15/2000/g' /etc/defaultnginx'; sudo service nginx restart",
-provider => 'shell'
+command  => 'sed -i "s/15/500/g" /etc/default/nginx; sudo service nginx restart',
+provider => shell,
 }
