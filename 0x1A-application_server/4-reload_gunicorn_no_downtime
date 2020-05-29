@@ -1,1 +1,2 @@
-kill -HUP gunicorn
+#!/usr/bin/env bash
+pkill -HUP gunicorn
